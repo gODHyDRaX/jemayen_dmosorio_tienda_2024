@@ -9,32 +9,7 @@ html{
 }
 .root{
     display: grid;
-    grid-template-rows: 5rem repeat(4,1fr) 6rem;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 5rem 1fr 40rem;
     width: 100%;
     height: 100vh;
-}
-.header{
-    background-color: red;
-    grid-column-start: 1;
-        grid-column-end: 5;
-}
-.footer{
-    background-color: rebeccapurple;
-    grid-row-start: 6;
-    grid-column-start: 1;
-    grid-column-end: 5;
-}
-.cate{
-    background-color:aqua;
-    grid-column-start: 1;
-    grid-row-start: 2;
-    grid-row-end: 6;
-}
-.main{
-    background-color: aquamarine;
-    grid-column-start: 2;
-    grid-column-end: 5;
-    grid-row-start: 2;
-    grid-row-end: 6;
 }

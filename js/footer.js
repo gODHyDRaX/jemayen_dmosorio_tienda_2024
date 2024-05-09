@@ -33,7 +33,9 @@ footer.innerHTML = `
         </div>
     </div>
 </div>
+<div class="end">
 <div class="ft">
+    <div class="ln1"></div>
     <h2>Copyrigth @2024</h2>
     <div class="imgs1">
         <img src="https://github.com/gODHyDRaX/img_tienda_api/blob/main/Vector.png?raw=true" alt="">
@@ -41,6 +43,8 @@ footer.innerHTML = `
         <img src="https://github.com/gODHyDRaX/img_tienda_api/blob/main/Instagram.png?raw=true" alt="">
         <img src="https://github.com/gODHyDRaX/img_tienda_api/blob/main/LinkedIn.png?raw=true" alt="">
     </div>
+</div>
+<div class="ln2"></div>
 </div>
 `
 }
