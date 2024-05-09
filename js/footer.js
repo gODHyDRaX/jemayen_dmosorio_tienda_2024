@@ -1,4 +1,5 @@
-let footer = document.querySelector(".footer")
+function cargar_ftr(){
+    let footer = document.querySelector(".footer")
 footer.innerHTML = `
 <div class="caja">
     <div class="cj">
@@ -35,7 +36,7 @@ footer.innerHTML = `
 <div class="ln1"></div>
 <div class="ln2"></div>
 <div class="ft">
-    <h2>Copyrigth @2022</h2>
+    <h2>Copyrigth @2024</h2>
     <div class="imgs1">
         <img src="https://github.com/gODHyDRaX/img_tienda_api/blob/main/Vector.png?raw=true" alt="">
         <img src="https://github.com/gODHyDRaX/img_tienda_api/blob/main/Twitter.png?raw=true" alt="">
@@ -44,3 +45,5 @@ footer.innerHTML = `
     </div>
 </div>
 `
+}
+export {cargar_ftr}
