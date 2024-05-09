@@ -6,9 +6,6 @@ let root = document.querySelector(".root")
 root.innerHTML = `
     <header class="header"></header>
     <div class="main"></div>
+    <div class="cate"></div>
     <footer class="footer"></footer>
 `
-
-cargar_header()
-cargar_categorias()
-cargar_ftr()

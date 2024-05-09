@@ -33,8 +33,6 @@ footer.innerHTML = `
         </div>
     </div>
 </div>
-<div class="ln1"></div>
-<div class="ln2"></div>
 <div class="ft">
     <h2>Copyrigth @2024</h2>
     <div class="imgs1">
