@@ -1,10 +1,80 @@
 .footer{
-    display: flex;
-    width: 100%;
-    height: 100%;
-    background-color: rebeccapurple;
+    display: grid;
+    background-color: #3B2E2E;
     color: white;
-    justify-content: center;
-    align-items: center;
-    font-size: 5rem;
+    grid-template-rows: 1fr 10rem;
+    font-size: 1rem;
+    padding: 2rem;
 }
+.caja{
+    display: grid;
+    justify-content: space-between;
+    padding: 2rem;
+    grid-template-columns: 256.63px 256.63px 256.63px 1fr;
+}
+.cj{
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+.ft{
+    display: flex;
+    justify-content: space-evenly;
+}
+.cj1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2.5rem;
+}
+.cj1 h1{
+    font-size: 46px;
+}
+.end{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.ft{
+    display: flex;
+    width: 20%;
+    justify-content: space-between;
+}
+.ln1{
+    background-color: #8D8080;
+    width: 39.4rem;
+    height: 2px;
+}
+.ln2{
+    background-color: #8D8080;
+    width: 39.4rem;
+    height: 2px;
+}
+.mail {
+    display: flex;
+    align-items: center; 
+  }
+  
+  .mail input {
+   width: 245px;
+   height: 69px;
+    background-color: #2B2E3C;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+  }
+  
+  .btn {
+    background-color: white;
+    width: 145px;
+    height: 55px;
+    color: black;
+    padding: 10px 15px;
+    align-items: center;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
