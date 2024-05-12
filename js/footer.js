@@ -35,12 +35,14 @@ footer.innerHTML = `
 </div>
 <div class="end">
     <div class="ln1"></div>
+        <div class="ft">
     <h2>Copyrigth @2024</h2>
     <div class="imgs1">
         <img src="https://github.com/gODHyDRaX/img_tienda_api/blob/main/Vector.png?raw=true" alt="">
         <img src="https://github.com/gODHyDRaX/img_tienda_api/blob/main/Twitter.png?raw=true" alt="">
         <img src="https://github.com/gODHyDRaX/img_tienda_api/blob/main/Instagram.png?raw=true" alt="">
         <img src="https://github.com/gODHyDRaX/img_tienda_api/blob/main/LinkedIn.png?raw=true" alt="">
+    </div>
     </div>
 <div class="ln2"></div>
 </div>
