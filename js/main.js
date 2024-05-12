@@ -10,3 +10,4 @@ root.innerHTML = `
 `
 cargar_header()
 cargar_ftr()
+cargar_categorias()
