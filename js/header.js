@@ -9,7 +9,7 @@ header.innerHTML = `
             <div>Make</div>
             <div>Features</div>
             <div>Solutions</div>
-            <div>Templates</div>
+            <div>Templates</div>    
             <div>Pricing</div>
             <div>🚩</div>
             </div>
