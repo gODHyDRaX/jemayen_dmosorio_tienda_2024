@@ -1,0 +1,70 @@
+.main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  padding: 20px;
+  justify-content: space-around;
+  justify-items: center;
+  align-items: center;
+  transition: transform 0.3s ease; 
+}
+.item {
+  width: 266px;
+  height: 200px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.caj_img {
+  text-align: center;
+}
+
+.caj_img img {
+  max-width: 50px;
+  max-height: 50px;
+  border-radius: 7px;
+}
+
+.crt {
+  width: 17px;
+  height: auto;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.crt:hover {
+  background-color: rgba(135, 207, 235, 0.218);
+  border-radius: 5px;
+  transform: scale(1.2);
+  width: 3rem;
+}
+
+.title {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.desc_item {
+  font-size: 0.9rem;
+  color: #666666e0;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.precio {
+  font-size: 1.1rem;
+  color: #333;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.categoria {
+  font-size: 0.9rem;
+  margin-top: 5px;
+}

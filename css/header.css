@@ -1,6 +1,6 @@
 .header {
     display: grid;
-    grid-template-rows: 1fr 1rem;  
+    grid-template-rows: repeat(2, 1fr)  ;
     justify-content: space-between;
     align-items: center;
     background-color: #3B2E2E;
@@ -62,12 +62,10 @@
 
 
   .categorias {
-    background-color: #c69b7c;
     color: white;
     position: absolute;
     width: 100%;
-    top: 9%; 
-    z-index: 0; 
+    top: 9%;  
     padding: 1rem 0; 
     display: flex;
     justify-content: center;

@@ -1,0 +1,18 @@
+.categorias {
+    display: flex; 
+    flex-wrap: wrap; 
+    list-style: none; 
+
+  }
+  .ctg {
+    margin: 4px; 
+    padding: 3px 6px; 
+    border: 1px solid #ddd;
+    border-radius: 5px; 
+    cursor: pointer; 
+  }
+  
+  .ctg:hover { 
+    background-color: rgba(128, 128, 128, 0.247); 
+  }
+  
