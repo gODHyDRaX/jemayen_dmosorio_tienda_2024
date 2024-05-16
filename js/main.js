@@ -8,6 +8,7 @@ root.innerHTML = `
     <header class="header"></header>
     <div class="main"></div>
     <footer class="footer"></footer>
+    <div class="vtn"></div>
 `
 cargar_header()
 cargar_ftr()

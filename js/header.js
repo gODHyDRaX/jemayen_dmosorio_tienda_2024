@@ -11,7 +11,9 @@ header.innerHTML = `
             <div>Solutions</div>
             <div>Templates</div>    
             <div>Pricing</div>
-            <div>🚩</div>
+            <div class="btn_shop"><span class="material-symbols-outlined">
+            add_shopping_cart
+            </span></div>
             </div>
             <div class="cjhe2">
                 <div class="btnh1">Login</div>
