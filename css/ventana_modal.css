@@ -1,0 +1,22 @@
+.modal {
+    display: none;
+    /* Ocultar por defecto */
+    position: fixed;
+    /* Fijar la posición */
+    z-index: 1;
+    /* Sobre otros elementos */
+    left: 0;
+    top: 0;
+    width: 40rem;
+    /* Ancho completo */
+    height: 100%;
+    /* Alto completo */
+    overflow: auto;
+    /* Scroll si es necesario */
+    background-color: white;
+    /* Color de fondo */
+    /* Fondo con transparencia */
+    padding-top: 60px;
+    /* Espaciado superior */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
