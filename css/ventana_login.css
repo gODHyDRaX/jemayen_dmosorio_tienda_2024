@@ -1,0 +1,24 @@
+.modal_login {
+    display: none;
+        /* Ocultar la modal por defecto */
+        position: fixed;
+        /* Posición fija para que se mantenga en su lugar al hacer scroll */
+        top: 50%;
+        /* Posicionamiento vertical en el centro */
+        left: 50%;
+        /* Posicionamiento horizontal en el centro */
+        transform: translate(-50%, -50%);
+        /* Centrar exactamente en el centro */
+        background-color: rgba(0, 0, 0, 0.5);
+        /* Fondo oscuro semi-transparente */
+        width: 80%;
+        /* Ancho de la modal */
+        max-width: 600px;
+        /* Ancho máximo de la modal */
+        padding: 20px;
+        /* Espaciado interno */
+        border-radius: 10px;
+        /* Bordes redondeados */
+        z-index: 999;
+        /* Asegura que la modal esté sobre otros elementos */
+}
