@@ -1,24 +1,104 @@
+/* Estilos de la Modal */
 .modal_login {
     display: none;
-        /* Ocultar la modal por defecto */
-        position: fixed;
-        /* Posición fija para que se mantenga en su lugar al hacer scroll */
-        top: 50%;
-        /* Posicionamiento vertical en el centro */
-        left: 50%;
-        /* Posicionamiento horizontal en el centro */
-        transform: translate(-50%, -50%);
-        /* Centrar exactamente en el centro */
-        background-color: rgba(0, 0, 0, 0.5);
-        /* Fondo oscuro semi-transparente */
-        width: 80%;
-        /* Ancho de la modal */
-        max-width: 600px;
-        /* Ancho máximo de la modal */
-        padding: 20px;
-        /* Espaciado interno */
-        border-radius: 10px;
-        /* Bordes redondeados */
-        z-index: 999;
-        /* Asegura que la modal esté sobre otros elementos */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo más claro */
+    width: 80%;
+    max-width: 400px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    z-index: 999;
+    box-sizing: border-box;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Botón de Login */
+.btnLgn {
+    background-color: #6D4C41; /* Color de fondo más oscuro */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Añadir transición de transformación */
+}
+
+.btnLgn:hover {
+    background-color: #8D6E63; /* Cambiar color al pasar el cursor */
+    transform: scale(1.05); /* Ampliar ligeramente al hacer hover */
+}
+
+/* Campos de Entrada */
+.usrT, .passT {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #FAFAFA; /* Fondo más claro y consistente */
+    transition: border 0.3s ease, background-color 0.3s ease;
+}
+
+.usrT:focus, .passT:focus {
+    border-color: #FF7043; /* Cambiar color de borde al enfocar */
+    background-color: #FFF; /* Fondo blanco al enfocar */
+}
+
+/* Etiqueta de Campo */
+.spnL {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: bold;
+    font-size: 14px; /* Añadir tamaño de fuente */
+}
+
+/* Clase de Contenedor */
+.dvcl {
+    background: linear-gradient(135deg, #DAC0A3, #DAC0A3); /* Gradiente de amarillo */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añadir sombra */
+    text-align: center;
+    margin-top: 20px; /* Añadir margen superior */
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dvcl:hover {
+    box-shadow: 0px 6px 8px #c69b7c8a;
+    background: linear-gradient(135deg, #EADBC8, #EADBC8); /* Cambiar gradiente al pasar el cursor */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Aumentar sombra al pasar el cursor */
+}
+
+/* Transiciones Generales */
+.modal_login, .btnLgn, .usrT, .passT, .dvcl {
+    transition: all 0.3s ease;
+}
+.dvcl{
+    display: flex;
+    flex-direction: row;
+    gap: 23rem;
+    cursor: pointer;
+}
+.cjhe2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+}
+
+.cjhe2 img {
+    width: 4rem; /* Mantiene la anchura de la imagen */
+    margin: auto; /* Centra la imagen */
+}
+.cjhe2 span{
+    font-size: 2rem;
+    color: white;
 }
