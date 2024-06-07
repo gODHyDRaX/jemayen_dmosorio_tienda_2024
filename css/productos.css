@@ -1,15 +1,17 @@
+/* Base styles */
 .main {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr); /* Adjust for desktops (optional) */
   grid-gap: 20px;
   padding: 20px;
   justify-content: space-around;
   justify-items: center;
   align-items: center;
-  transition: transform 0.3s ease; 
+  transition: transform 0.3s ease;
 }
+
 .item {
-  width: 266px;
+  width: 266px; /* Adjust for desktops (optional) */
   height: 200px;
   background-color: #f9f9f9;
   padding: 20px;
@@ -67,4 +69,45 @@
 .categoria {
   font-size: 0.9rem;
   margin-top: 5px;
+}
+
+/* Tablet Styles (optional) */
+@media only screen and (min-width: 768px) {
+  /* Adjust grid-template-columns for tablets (e.g., 2 items per row) */
+  .main {
+    grid-template-columns: repeat(2, 1fr); /* Example for 2 items per row */
+  }
+}
+
+/* Desktop Styles (optional) */
+@media only screen and (min-width: 992px) {
+  /* Adjust grid-template-columns for desktops (e.g., 3 items per row) */
+  .main {
+    grid-template-columns: repeat(3, 1fr); /* Example for 3 items per row */
+  }
+
+  /* You might want to adjust item width and other styles for desktops */
+  .item {
+    width: 300px; /* Example for wider items on desktops */
+  }
+}
+
+/* Phone Styles (375px) */
+@media only screen and (max-width: 448px) {
+  .main {
+    grid-template-columns: repeat(1, 1fr); /* 1 item per row */
+    background-color: red;
+  }
+
+  .item {
+    width: 100%; /* Full width on phones */
+  }
+
+  /* Adjust font sizes and other styles for better readability on phones */
+  .title,
+  .desc_item,
+  .precio,
+  .categoria {
+    font-size: 0.9rem;
+  }
 }
