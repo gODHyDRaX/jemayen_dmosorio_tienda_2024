@@ -2,7 +2,6 @@
 import { cargar_header } from "./header.js";
 import { cargar_ftr } from "./footer.js";
 import { cargar_categorias } from "./categorias.js";
-import { obtener_productos } from "./productos.js";
 
     let root = document.querySelector(".root");
     root.innerHTML = `
@@ -14,4 +13,3 @@ import { obtener_productos } from "./productos.js";
     cargar_header();
     cargar_ftr();
     cargar_categorias();
-    obtener_productos();

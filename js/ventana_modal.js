@@ -1,12 +1,13 @@
+import { obtener_productos } from "./productos.js";
 import { usuarioId } from "./login.js";
+
 let root = document.querySelector(".main");
 let btn_shop = document.querySelector(".btn_shop");
 
 btn_shop.addEventListener("click", async () => {
-
     let modal = document.createElement("div");
     modal.classList.add("modal");
-    modal.style.display = 'block';
+    modal.style.display = 'flex';
     root.appendChild(modal);
 
     modal.innerHTML = `
@@ -22,7 +23,12 @@ btn_shop.addEventListener("click", async () => {
         modal.remove();
     });
 
-    await obtener_productos_carrito(usuarioId);
+    try {
+        const productsInCart = await obtener_productos_carrito(usuarioId);
+        cargarCrt(productsInCart);
+    } catch (error) {
+        console.log("Error al obtener los productos del carrito:", error);
+    }
 });
 
 async function obtener_productos_carrito(cartId) {
@@ -37,14 +43,17 @@ async function obtener_productos_carrito(cartId) {
 
         const productsInCart = productData.filter(product => productIds.includes(product.id));
 
-        cargarCrt(productsInCart);
+        return productsInCart;
     } catch (error) {
         console.log("Error al obtener los productos del carrito:", error);
+        throw error;
     }
 }
 
 function cargarCrt(lista_crt) {
     let cj_crt = document.querySelector(".cj_crt");
+
+    cj_crt.innerHTML = ""; // Limpiar contenido existente
 
     lista_crt.forEach(elemento => {
         let item_crt = document.createElement("div");

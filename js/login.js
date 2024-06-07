@@ -18,7 +18,7 @@ let btnh1 = document.querySelector(".btnh1");
 btnh1.addEventListener("click", () => {
     let modal_login = document.createElement("div");
     modal_login.classList.add("modal_login");
-    modal_login.style.display = 'block';
+    modal_login.style.display = 'block';     
 
     modal_login.innerHTML = `
         <div class="dvcl">
