@@ -10,7 +10,13 @@
     background-color: rgba(222, 184, 135, 0.475);
 }
 .modal {
-            
+    position: fixed; /*coso para que la ventana este fija en la aprte superior izquierdaaaa*/
+    top: 0; 
+    left: 0; 
+    z-index: 1000; 
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .modal .tu_crt {
     background-color: #fff;
