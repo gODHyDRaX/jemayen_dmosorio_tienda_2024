@@ -1,6 +1,5 @@
-// Variable global para almacenar datos de los usuarios
 let usuariosData = [];
-let usuarioId = 0; // Inicialmente 0, cambiará al ID del usuario autenticado
+let usuarioId = null;  // Inicialmente null, cambiará al ID del usuario autenticado
 
 async function obtenerUsuarios() {
     try {
@@ -15,10 +14,15 @@ async function obtenerUsuarios() {
 let root = document.querySelector(".root");
 let btnh1 = document.querySelector(".btnh1");
 
+// Función para manejar el clic del botón de login
 btnh1.addEventListener("click", () => {
+    mostrarModalLogin();
+});
+
+function mostrarModalLogin() {
     let modal_login = document.createElement("div");
     modal_login.classList.add("modal_login");
-    modal_login.style.display = 'block';     
+    modal_login.style.display = 'block';
 
     modal_login.innerHTML = `
         <div class="dvcl">
@@ -42,7 +46,7 @@ btnh1.addEventListener("click", () => {
     });
 
     comparar_info();
-});
+}
 
 function comparar_info() {
     let btnLgn = document.querySelector(".btnLgn");
@@ -60,23 +64,11 @@ function comparar_info() {
             let usuarioEncontrado = usuariosData.find(user => user.username === usuario && user.password === contra);
             if (usuarioEncontrado) {
                 console.log("Login exitoso");
-                let btnh2 = document.querySelector(".btnh2")
-                let cjhe2 = document.querySelector(".cjhe2")
-                btnLgn.remove()
-                btnh1.remove()
-                cjhe2.innerHTML = `
 
-                    <img src="https://github.com/gODHyDRaX/img_tienda_api/blob/main/account.png?raw=true" alt="">
-                    <span>${usuario}</span>
-                `
+                // Guardar información del usuario en localStorage
+                localStorage.setItem('usuario', JSON.stringify(usuarioEncontrado));
 
-                let modal_login = document.querySelector(".modal_login");
-                if (modal_login) {
-                    modal_login.remove(); // Cerrar el modal de login
-
-                }
-                alert("Login exitoso"); // Mostrar un alert nativo
-                usuarioId = usuarioEncontrado.id; // Actualizar el ID del usuario autenticado
+                actualizarEstadoUsuario(usuarioEncontrado);
             } else {
                 console.log("Credenciales incorrectas");
             }
@@ -86,7 +78,40 @@ function comparar_info() {
     });
 }
 
+function actualizarEstadoUsuario(usuarioEncontrado) {
+    let btnh1 = document.querySelector(".btnh1");
+    let btnh2 = document.querySelector(".btnh2");
+    let cjhe2 = document.querySelector(".cjhe2");
+    let btnLgn = document.querySelector(".btnLgn");
+
+    if (btnLgn) btnLgn.remove();
+    if (btnh1) btnh1.remove();
+
+    cjhe2.innerHTML = `
+        <img src="https://github.com/gODHyDRaX/img_tienda_api/blob/main/account.png?raw=true" alt="">
+        <span>${usuarioEncontrado.username}</span>
+    `;
+
+    let modal_login = document.querySelector(".modal_login");
+    if (modal_login) {
+        modal_login.remove(); // Cerrar el modal de login
+    }
+
+    usuarioId = usuarioEncontrado.id; // Actualizar el ID del usuario autenticado
+}
+
+function verificarSesion() {
+    const usuarioGuardado = localStorage.getItem('usuario');
+    if (usuarioGuardado) {
+        const usuario = JSON.parse(usuarioGuardado);
+        actualizarEstadoUsuario(usuario);
+    }
+}
+
 // Llamar a la función para obtener los usuarios al cargar el script
 obtenerUsuarios();
 
-export {usuarioId}
+// Verificar si hay una sesión guardada al cargar la página
+verificarSesion();
+
+export { usuarioId };

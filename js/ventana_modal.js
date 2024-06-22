@@ -4,31 +4,18 @@ import { usuarioId } from "./login.js";
 let root = document.querySelector(".main");
 let btn_shop = document.querySelector(".btn_shop");
 
+let carrito = cargarCarritoDesdeLocalStorage();  // Cargar el carrito desde localStorage al iniciar
+
 btn_shop.addEventListener("click", async () => {
-    let modal = document.createElement("div");
-    modal.classList.add("modal");
-    modal.style.display = 'flex';
+    if (!usuarioId) {
+        alert("Por favor, inicie sesión primero.");
+        return;
+    }
+
+    const modal = crearModal();
     root.appendChild(modal);
 
-    modal.innerHTML = `
-        <div class="tu_crt">
-            Carrito
-            <span class="material-symbols-outlined close">close</span>
-        </div>
-        <div class="cj_crt"></div>
-        <div class="cpr">Comprar</div>
-    `;
-
-    modal.querySelector('.close').addEventListener('click', () => {
-        modal.remove();
-    });
-
-    try {
-        const productsInCart = await obtener_productos_carrito(usuarioId);
-        cargarCrt(productsInCart);
-    } catch (error) {
-        console.log("Error al obtener los productos del carrito:", error);
-    }
+    cargarCrt(carrito);  // Cargar el carrito desde el estado local
 });
 
 async function obtener_productos_carrito(cartId) {
@@ -51,19 +38,18 @@ async function obtener_productos_carrito(cartId) {
 }
 
 function cargarCrt(lista_crt) {
-    let cj_crt = document.querySelector(".cj_crt");
+    const cj_crt = document.querySelector(".cj_crt");
+    cj_crt.innerHTML = "";
 
-    cj_crt.innerHTML = ""; // Limpiar contenido existente
-
-    lista_crt.forEach(elemento => {
-        let item_crt = document.createElement("div");
+    lista_crt.forEach((elemento, index) => {
+        const item_crt = document.createElement("div");
         item_crt.classList.add("item_crt");
 
-        let short_text = elemento.title.split(' ').slice(0, 5).join(' ');
+        const short_text = elemento.title.split(' ').slice(0, 5).join(' ');
         item_crt.innerHTML = `
             <img src="${elemento.image}" alt="" class="img_crt">
             <h1 class="tl">${short_text}</h1>
-            <span class="material-symbols-outlined">delete_forever</span>
+            <span class="material-symbols-outlined dlt" data-index="${index}">delete_forever</span>
             <div class="itm_cta">
                 Cantidad: 1 <span class="material-symbols-outlined">add</span>
             </div>
@@ -72,4 +58,55 @@ function cargarCrt(lista_crt) {
 
         cj_crt.appendChild(item_crt);
     });
+
+    document.querySelectorAll(".dlt").forEach(button => {
+        button.addEventListener("click", (event) => {
+            const index = event.target.getAttribute('data-index');
+            carrito.splice(index, 1);  // Eliminar del estado global del carrito
+            guardarCarritoEnLocalStorage(carrito);  // Guardar el carrito en localStorage
+            cargarCrt(carrito);  // Recargar el carrito
+        });
+    });
+}
+
+function crearModal() {
+    const modal = document.createElement("div");
+    modal.classList.add("modal");
+    modal.style.display = 'flex';
+    modal.innerHTML = `
+        <div class="tu_crt">
+            Carrito
+            <span class="material-symbols-outlined close">close</span>
+        </div>
+        <div class="cj_crt"></div>
+        <div class="cpr">Comprar</div>
+    `;
+
+    modal.querySelector('.close').addEventListener("click", () => {
+        modal.remove();
+    });
+
+    return modal;
+}
+
+function guardarCarritoEnLocalStorage(carrito) {
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+}
+
+function cargarCarritoDesdeLocalStorage() {
+    const carritoGuardado = localStorage.getItem('carrito');
+    return carritoGuardado ? JSON.parse(carritoGuardado) : [];
+}
+
+// Si el carrito está vacío, intentamos cargarlo desde la API solo si el usuario está logueado
+if (carrito.length === 0 && usuarioId) {
+    (async () => {
+        try {
+            const productsInCart = await obtener_productos_carrito(usuarioId);
+            carrito = productsInCart;  // Inicializar el estado global del carrito
+            guardarCarritoEnLocalStorage(carrito);  // Guardar el carrito en localStorage
+        } catch (error) {
+            console.log("Error al obtener los productos del carrito:", error);
+        }
+    })();
 }

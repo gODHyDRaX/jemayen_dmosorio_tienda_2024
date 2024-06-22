@@ -12,7 +12,9 @@ function cargar_productos(list_pdct) {
             <div class="caj_img">
                 <img src="${elemento.image}" alt="">
             </div>
-            <img src="https://github.com/gODHyDRaX/img_tienda_api/blob/main/cart.png?raw=true" alt="" class="crt">
+            <span class="material-symbols-outlined crt">
+shopping_cart
+</span>
             <h2 class="title">${short_text}</h2>
             <span class="desc_item">${short_text2}</span>
             <h2 class="precio"> $${elemento.price}</h2>
@@ -20,6 +22,14 @@ function cargar_productos(list_pdct) {
         `;
         main.appendChild(item);
     });
+    function agregar_producto(){
+        let crt =  document.querySelector(".crt")
+        crt.addEventListener("click",()=>{
+            alert("hola mundo")
+        })
+        
+    }
+            agregar_producto()
 }
 
 async function obtener_productos(categoria = "") {
