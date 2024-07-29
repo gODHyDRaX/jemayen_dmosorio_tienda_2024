@@ -56,12 +56,10 @@
     margin-bottom: 5px;
     color: #333;
     font-weight: bold;
-    font-size: 14px; /* Añadir tamaño de fuente */
+    font-size: 14px;
 }
-
-/* Clase de Contenedor */
 .dvcl {
-    background: linear-gradient(135deg, #DAC0A3, #DAC0A3); /* Gradiente de amarillo */
+    background: linear-gradient(135deg, #DAC0A3, #DAC0A3); 
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añadir sombra */
@@ -72,11 +70,9 @@
 
 .dvcl:hover {
     box-shadow: 0px 6px 8px #c69b7c8a;
-    background: linear-gradient(135deg, #EADBC8, #EADBC8); /* Cambiar gradiente al pasar el cursor */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Aumentar sombra al pasar el cursor */
+    background: linear-gradient(135deg, #EADBC8, #EADBC8); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
 }
-
-/* Transiciones Generales */
 .modal_login, .btnLgn, .usrT, .passT, .dvcl {
     transition: all 0.3s ease;
 }
@@ -95,8 +91,8 @@
 }
 
 .cjhe2 img {
-    width: 4rem; /* Mantiene la anchura de la imagen */
-    margin: auto; /* Centra la imagen */
+    width: 4rem; 
+    margin: auto; 
 }
 .cjhe2 span{
     font-size: 2rem;

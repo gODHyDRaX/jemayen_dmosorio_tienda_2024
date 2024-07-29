@@ -69,45 +69,54 @@
 .categoria {
   font-size: 0.9rem;
   margin-top: 5px;
+  text-align: center;
 }
-
-/* Tablet Styles (optional) */
-@media only screen and (min-width: 768px) {
-  /* Adjust grid-template-columns for tablets (e.g., 2 items per row) */
-  .main {
-    grid-template-columns: repeat(2, 1fr); /* Example for 2 items per row */
+@media (max-width: 480px){
+  .main{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
-}
-
-/* Desktop Styles (optional) */
-@media only screen and (min-width: 992px) {
-  /* Adjust grid-template-columns for desktops (e.g., 3 items per row) */
-  .main {
-    grid-template-columns: repeat(3, 1fr); /* Example for 3 items per row */
+  .item{
+    width: 266px;
+    height: 300px;
+    padding: 0px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
   }
-
-  /* You might want to adjust item width and other styles for desktops */
-  .item {
-    width: 300px; /* Example for wider items on desktops */
+  .caj_img img {
+    max-width: 90px;
+    max-height: 85px;
+    border-radius: 7px;
   }
-}
-
-/* Phone Styles (375px) */
-@media only screen and (max-width: 448px) {
-  .main {
-    grid-template-columns: repeat(1, 1fr); /* 1 item per row */
-    background-color: red;
+  .crt {
+    width: 17px; /*el carro*/
+    height: auto;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
   }
-
-  .item {
-    width: 100%; /* Full width on phones */
+  .title {
+    font-size: 1.8rem;
+    margin-top: 10px;
+    text-align: center;
   }
-
-  /* Adjust font sizes and other styles for better readability on phones */
-  .title,
-  .desc_item,
-  .precio,
+  .desc_item {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    display: block;
+    text-align: center;
+  }
+  .precio {
+    font-size: 1.9rem;
+    color: #333;
+    margin-top: 10px;
+    text-align: center;
+  }
   .categoria {
-    font-size: 0.9rem;
+    font-size: 1.9rem;
+    margin-top: 5px;
+    text-align: center;
   }
 }
