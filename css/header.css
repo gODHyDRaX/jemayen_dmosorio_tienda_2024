@@ -6,6 +6,10 @@
   align-items: center;
   background-color: #3B2E2E;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 53d769b5a7f562daa8729b9401590ff24838e423
 .dhr {
   display: flex;
   justify-content: space-between;
@@ -19,6 +23,10 @@
   height: 50px;
   margin-right: 1rem;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 53d769b5a7f562daa8729b9401590ff24838e423
 .cjhe {
   display: flex;
   justify-content: center;
@@ -114,6 +122,11 @@
       gap: 3rem;
       align-items: center;
       flex-direction: row;
+<<<<<<< HEAD
       left: 5rem;
     }
   }
+=======
+    }
+  }
+>>>>>>> 53d769b5a7f562daa8729b9401590ff24838e423
